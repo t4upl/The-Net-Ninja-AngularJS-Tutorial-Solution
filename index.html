@@ -7,10 +7,12 @@
     <script src="app\app.js"></script>
   </head>
   <body>
+    <header ng-include="'header.html'"> </header>
     <div ng-controller="myNinjaController">
       <p>{{message}}</p>
+      <input type="text" ng-model = "search" />
       <ul>
-        <li ng-repeat="ninja in ninjas">{{ninja}}</li>
+        <li ng-repeat="ninja in ninjas | filter: search |orderBy: 'name'">{{ninja.name}} - {{ninja.rate | currency}}</li>
       </ul>
     </div>
 
