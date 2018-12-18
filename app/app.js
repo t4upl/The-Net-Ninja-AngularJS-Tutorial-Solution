@@ -26,26 +26,29 @@ myNinjaApp.controller('myNinjaController', ['$scope', function($scope){
       name: "Yoshi",
       belt: "green",
       rate: 50,
-      available: true
+      available: true,
+      thumb: "content\\img\\yoshi.png"
     },
     {
       name: "Crytstal",
       belt: "green",
       rate: 30,
-      available: true
-
+      available: true,
+      thumb: "content\\img\\crystal.png"
     },
     {
       name: "Ryu",
       belt: "orange",
       rate: 10,
-      available: true
+      available: true,
+      thumb: "content\\img\\crystal.png"
     },
     {
       name: "Shaun",
       belt: "black",
       rate: 51000,
-      available: true
+      available: true,
+      thumb: "content\\img\\crystal.png"
     }
   ];
 }]);
