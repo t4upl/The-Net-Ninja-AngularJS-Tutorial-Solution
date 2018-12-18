@@ -8,6 +8,19 @@ myNinjaApp.controller('myNinjaController', ['$scope', function($scope){
     $scope.ninjas.splice(removedNinja, 1);
   }
 
+  $scope.addNinja = function(){
+    $scope.ninjas.push({
+      name: $scope.newninja.name,
+      belt: $scope.newninja.belt,
+      rate: parseInt($scope.newninja.rate),
+      available: true
+    });
+
+    $scope.newninja.name = '';
+    $scope.newninja.belt = '';
+    $scope.newninja.rate = '';
+  }
+
   $scope.ninjas = [
     {
       name: "Yoshi",
