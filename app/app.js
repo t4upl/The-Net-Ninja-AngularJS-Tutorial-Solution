@@ -1,4 +1,4 @@
-var myNinjaApp = angular.module('myNinjaApp', ['ngRoute']);
+var myNinjaApp = angular.module('myNinjaApp', ['ngRoute', 'ngAnimate']);
 
 myNinjaApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider
@@ -55,6 +55,11 @@ myNinjaApp.controller('myNinjaController', ['$scope', '$http', function($scope, 
     $scope.newninja.belt = '';
     $scope.newninja.rate = '';
   }
+
+  $scope.removeAll = function() {
+    console.log("remove all");
+    $scope.ninjas = [];
+  };
 
   $http.get('data\\ninjas.json').then(
       function(response){
