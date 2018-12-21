@@ -1,5 +1,11 @@
 var myNinjaApp = angular.module('myNinjaApp', ['ngRoute', 'ngAnimate']);
 
+myNinjaApp.controller("ContactController", ['$scope', '$location', function($scope, $location){
+  $scope.sendMessage = function(){
+    $location.path('/contact-success');
+  }
+}]);
+
 myNinjaApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider
     .when('/home', {
@@ -7,7 +13,12 @@ myNinjaApp.config(['$routeProvider', function($routeProvider) {
       controller: 'myNinjaController'
     })
     .when('/contact', {
-      templateUrl:'views\\contact.html'
+      templateUrl:'views\\contact.html',
+      controller: 'ContactController'
+    })
+    .when('/contact-success', {
+      templateUrl:'views\\contact-success.html',
+      controller: 'ContactController'
     })
     .when('/directory', {
       templateUrl:'views\\directory.html',
