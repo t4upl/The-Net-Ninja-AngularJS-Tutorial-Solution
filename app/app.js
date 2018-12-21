@@ -6,9 +6,13 @@ myNinjaApp.controller("ContactController", ['$scope', '$location', function($sco
   }
 }]);
 
-myNinjaApp.config(['$routeProvider', function($routeProvider) {
+myNinjaApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+
+ $locationProvider.html5Mode(true);
+
+
   $routeProvider
-    .when('/home', {
+    .when('/', {
       templateUrl:'views\\home.html',
       controller: 'myNinjaController'
     })
@@ -25,7 +29,7 @@ myNinjaApp.config(['$routeProvider', function($routeProvider) {
       controller: 'myNinjaController'
     })
     .otherwise({
-      redirectTo: '/home'
+      redirectTo: '/'
     })
 }]);
 
